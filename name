@@ -1,0 +1,4 @@
+myValue = 10 
+def showValue(): 
+   print(myValue)
+   showValue()
