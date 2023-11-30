@@ -1,3 +1,0 @@
-Title: Hello World, Release: 2000 
-Title: Computer Science, Release: 2023 
-Title: Information Technology, Release: 2024 
