@@ -1,5 +1,5 @@
 myValue = 10 
-myValue = "Hello, Hi"
+myValue = "Hello, hihi"
 def showValue(): 
    print(myValue)
    showValue()
