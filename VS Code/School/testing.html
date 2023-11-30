@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        TEXT <br>
+        <input type="text" id="userText" placeholder="Input Text"> <br> <br>
+
+        RADIO BUTTONS <br>
+        <input type="radio" id="r1a1" name="radiolist1" value="Option 1"> Option 1 <br>
+        <input type="radio" id="r1a2" name="radiolist1" value="Option 2"> Option 2 <br>
+        <input type="radio" id="r1a3" name="radiolist1" value="Option 3"> Option 3 <br> <br>
+
+        CHECK <br>
+        <input type="radio" id="done" name="radioDone"> Check<br> <br>
+
+        CHECKLIST <br>
+        <input type="checkbox" name="checklist1" value="Option 1"> Option 1 <br>
+        <input type="checkbox" name="checklist1" value="Option 2"> Option 2 <br>
+        <input type="checkbox" name="checklist1" value="Option 3"> Option 3 <br>
+        
+        <!-- Buttons -->
+        <br>
+        <input type="button" onclick="displayInfo()" value="Display">
+        <input type="reset">
+
+    </form>
+
+    <label id="label1"></label>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum fugiat sunt eligendi vitae, nostrum est dolor quia praesentium beatae qui nemo excepturi tempora impedit voluptate molestias accusantium architecto. Natus, itaque.</p>
+
+    <script>
+        function displayInfo(){
+            var lblName = document.getElementById("label1");
+            var usertxt = document.getElementById("userText").value;
+            var checklistCheck = document.getElementsByName("checklist1");
+            var checkDone = document.getElementById("done");
+            var checkradio = document.getElementsByName("radiolist1");
+
+            var chosenRadio = ""
+            for(var i=0;i<checkradio.length;i++){
+                if(checkradio[i].checked){
+                    chosenRadio += checkradio[i].value;
+                }
+            }
+
+            var isDone = 0
+            if(checkDone.checked){
+                isDone = 1;
+            }
+
+            var checkedOptions = ""
+            for(var i=0;i<checklistCheck.length;i++){
+                if(checklistCheck[i].checked){
+                    checkedOptions += checklistCheck[i].value + "<br>";
+                }
+            }
+
+            var total = isDone;
+
+            lblName.innerHTML = "<br>User Text: " + usertxt + "<br><br>Checked: <br>" + checkedOptions + "<br>Chosen Radio: <br>" + chosenRadio + "<br>Done: " + total;
+        }
+
+    </script>
+
+</body>
+</html>
